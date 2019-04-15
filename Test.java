@@ -12,12 +12,25 @@ import lejos.utility.Delay;
 
 public class Test {
 
-  public static mouth() {
+  public static void mouth() {
     Mouth.open();
     Mouth.close();
   }
+  
+  public static void avancer() {
+	  Move.avancer(50);
+  }
+  
+  public static void distance() {
+	  int i =0;
+      while(i < 100) {
+		System.out.println(Detect.distance());
+		i++;
+      }
+  }
 
 	public static void move() {
+		
 		Boolean objectTouched = false;
 		Boolean objectFound = false;
 
@@ -32,9 +45,12 @@ public class Test {
 			}
 		}
 		closeMouth();
+		
 	}
 
   public static void main(String[] args) {
       Test.mouth();
+      Test.avancer();
+      Test.distance();
   }
 }
