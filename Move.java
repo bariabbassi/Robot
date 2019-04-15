@@ -8,6 +8,10 @@ import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3TouchSensor;
 import lejos.hardware.sensor.EV3UltrasonicSensor;
 import lejos.robotics.SampleProvider;
+import lejos.robotics.chassis.Chassis;
+import lejos.robotics.chassis.Wheel;
+import lejos.robotics.chassis.WheeledChassis;
+import lejos.robotics.navigation.MovePilot;
 import lejos.utility.Delay;
 
 public class Move {
@@ -39,4 +43,15 @@ public class Move {
       Motor.A.stop();
       Motor.B.stop();
     }
+    
+    public static void avancer(int distance) {
+		Wheel wheel1 = WheeledChassis.modelWheel(Motor.A, 43.2).offset(-72);
+		Wheel wheel2 = WheeledChassis.modelWheel(Motor.B, 43.2).offset(72);
+		Chassis chassis = new WheeledChassis(new Wheel[]{wheel1, wheel2},WheeledChassis.TYPE_DIFFERENTIAL); 
+		MovePilot pilot = new MovePilot(chassis);
+		pilot.travel(distance);
+		//pilot.setLinearSpeed(30);  // cm per second
+		//pilot.travel(50);         // cm
+	}
+	
 }

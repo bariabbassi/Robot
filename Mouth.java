@@ -10,7 +10,7 @@ import lejos.hardware.sensor.EV3UltrasonicSensor;
 import lejos.robotics.SampleProvider;
 import lejos.utility.Delay;
 
-class public Mouth {
+public class Mouth {
 
     public static void open() {
       Motor.C.forward();
