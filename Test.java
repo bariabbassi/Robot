@@ -29,11 +29,18 @@ public class Test {
       }
   }
 
-	public static void move() {
+  public static void smallTurn() {
+    for (int i=0; i<5; i++) {
+      Turn.smallTurnRight();
+    }
+    for (int i=0; i<5; i++) {
+      Turn.smallTurnLeft();
+    }
+  }
 
+	public static void move() {
 		Boolean objectTouched = false;
 		Boolean objectFound = false;
-
 		Mouth.open();
 		while(!objectTouched) {
 			Move.forward();
