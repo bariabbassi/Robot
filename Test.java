@@ -16,11 +16,11 @@ public class Test {
     Mouth.open();
     Mouth.close();
   }
-  
+
   public static void avancer() {
 	  Move.avancer(50);
   }
-  
+
   public static void distance() {
 	  int i =0;
       while(i < 100) {
@@ -30,7 +30,7 @@ public class Test {
   }
 
 	public static void move() {
-		
+
 		Boolean objectTouched = false;
 		Boolean objectFound = false;
 
@@ -44,12 +44,7 @@ public class Test {
 				Delay.msDelay(1000);
 			}
 		}
-<<<<<<< HEAD
-		closeMouth();
-		
-=======
 		Mouth.close();
->>>>>>> c46bea06205c822957dcf4013ed7f8073e871ea8
 	}
 
   public static void main(String[] args) {
