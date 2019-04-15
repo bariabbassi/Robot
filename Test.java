@@ -21,17 +21,17 @@ public class Test {
 		Boolean objectTouched = false;
 		Boolean objectFound = false;
 
-		openMouth();
+		Mouth.open();
 		while(!objectTouched) {
-			moveForward();
-			objectTouched = isTouched();
-			if(detect()) {
+			Move.forward();
+			objectTouched = Detect.isTouched();
+			if(Detect.distance()<40) {
 				detected=true;
-				moveForward();
+				Move.forward();
 				Delay.msDelay(1000);
 			}
 		}
-		closeMouth();
+		Mouth.close();
 	}
 
   public static void main(String[] args) {
