@@ -34,18 +34,22 @@ public class Test {
 		Boolean objectTouched = false;
 		Boolean objectFound = false;
 
-		openMouth();
+		Mouth.open();
 		while(!objectTouched) {
-			moveForward();
-			objectTouched = isTouched();
-			if(detect()) {
+			Move.forward();
+			objectTouched = Detect.isTouched();
+			if(Detect.distance()<40) {
 				detected=true;
-				moveForward();
+				Move.forward();
 				Delay.msDelay(1000);
 			}
 		}
+<<<<<<< HEAD
 		closeMouth();
 		
+=======
+		Mouth.close();
+>>>>>>> c46bea06205c822957dcf4013ed7f8073e871ea8
 	}
 
   public static void main(String[] args) {
